@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">REGISTRO</string>
+    <string name="InicioSesionString">Proyecto DISMOV</string>
+    <string name="emailregis">Correo electrónico</string>
+    <string name="emaillogin">CorreoElectronico</string>
+</resources>

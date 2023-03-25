@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">REGISTER</string>
+    <string name="InicioSesionString">DISMOV PROJECT</string>
+    <string name="emailregis">Email</string>
+    <string name="emaillogin">Email</string>
+</resources>
