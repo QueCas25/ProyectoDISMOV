@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class Registro extends AppCompatActivity {
     private Switch mLanguageSwitch;
-    private TextView TextoBajo, RegistroTitle;
+    private TextView TextoBajo, RegistroTitle, RegistroSubTitle;
     private TextInputEditText usernameField, emailField, passwordField, confirmPasswordField;
     private Button registerButton;
     private TextInputLayout usernameLayout, emailLayout, passwordLayout, confirmPasswordLayout;
@@ -61,8 +61,11 @@ public class Registro extends AppCompatActivity {
         confirmPasswordField = findViewById(R.id.confirm_password_field);
         confirmPasswordLayout = findViewById(R.id.ConfirmarRe);
         registerButton = findViewById(R.id.register_button);
-        TextoBajo = findViewById(R.id.Inicie);
+        TextoBajo = findViewById(R.id.textoBajo);
         RegistroTitle= findViewById(R.id.TituloRegistro);
+        RegistroSubTitle= findViewById(R.id.SubTemaRegistro);
+
+
         // Handle register button click
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -176,5 +179,6 @@ public class Registro extends AppCompatActivity {
         registerButton.setText(getString(R.string.BotonRe));
         TextoBajo.setText(getString(R.string.IniciaRe));
         RegistroTitle.setText(res.getString(R.string.TituloRe));
+        RegistroSubTitle.setText(res.getString(R.string.SubTemaDeRegistro));
     }
 }

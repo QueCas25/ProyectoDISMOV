@@ -20,11 +20,9 @@
     <string name="VideoLlamadaBoton">Join</string>
     <string name="VideoLlamadaRegresar">Back</string>
     <string name="BotonCarrito">ADMIN</string>
-    <string name="BotonProductos">Products</string>
-    <string name="BotonVideoLlamada">VideoCall</string>
-    <string name="BotonChat">Chat</string>
+
     <string name="TituloVideoLlamada">Fire World Seguridad-Admin</string>
-    <string name="BotonRegresar">Log out</string>
+
     <string name="CarritoUsuario">Users</string>
     <string name="ProductosUsuario">Products</string>
     <string name="VideollamadaUsuario">VideoCall</string>
@@ -32,4 +30,19 @@
     <string name="RegresarUsuario">Log out</string>
     <string name="TituloUsuario">Fire World Seguridad - User</string>
     <string name="Titulo">FireWorld Seguridad</string>
+
+
+    <string name="BotonProductos">Products</string>
+    <string name="BotonVideoLlamada">VideoCall</string>
+    <string name="BotonChat">Chat</string>
+    <string name="btnServicios">Services</string>
+    <string name="btnContacto">Contact</string>
+    <string name="btnPerfil">Profile</string>
+    <string name="BotonRegresar">Log out</string>
+    <string name="TituloDeRegistro">Register</string>
+    <string name="SubTemaDeRegistro">Complete this form</string>
+    <string name="QueSomos">Fire Extinguishers Store</string>
+    <string name="SubTituloDelLogin">Type your email and password</string>
+    <string name="TituloUsuarioEnMenu">Usuario</string>
+    <string name="TituloAdminEnMenu">Administrador</string>
 </resources>

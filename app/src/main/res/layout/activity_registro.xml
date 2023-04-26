@@ -6,106 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".Registro">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/TituloRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registro"
-            android:textSize="60sp"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/coolveticarg"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="@string/TituloDeRegistro"
+            android:textSize="60sp" />
 
         <TextView
+            android:id="@+id/SubTemaRegistro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Completa este formulario"
-            android:textSize="20sp"
-            android:fontFamily="@font/robotomedium"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"/>
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/SubTemaDeRegistro"
+            android:textSize="20sp" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/UsuarioRe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre de usuario">
+            android:hint="@string/UsuaRe">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username_field"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:maxLines="1"
                 android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
                 android:layout_marginTop="50dp"
+                android:layout_marginRight="25dp"
                 android:background="@drawable/edittext_custom"
+                android:maxLines="1"
                 android:padding="15dp"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/CorreoRe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Correo electrónico">
+            android:hint="@string/CorreoReg">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/edittext_custom"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edittext_custom"
                 android:padding="15dp"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ContrasenaRe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contraseña">
+            android:hint="@string/ContraRe">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/edittext_custom"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edittext_custom"
                 android:padding="15dp"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ConfirmarRe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Confirmar contraseña">
+            android:hint="@string/ConfRe">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password_field"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/edittext_custom"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edittext_custom"
                 android:padding="15dp"
-                android:textSize="15sp"/>
+                android:textSize="15sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -113,20 +119,20 @@
             android:id="@+id/register_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrarse"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="25dp"
-            android:layout_marginLeft="25dp"
-            android:background="@drawable/rounded_button"/>
+            android:background="@drawable/rounded_button"
+            android:text="@string/BotonRe" />
 
         <TextView
             android:id="@+id/textoBajo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ir a Iniciar sesión"
-            android:textSize="18sp"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="25dp"/>
+            android:text="@string/IniciaRe"
+            android:textSize="18sp" />
 
         <Switch
             android:id="@+id/language_switch"

@@ -24,22 +24,24 @@
             android:textSize="50dp" />
 
         <TextView
+            android:id="@+id/QueSomos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/InicioSesionString"
-            android:textSize="35dp"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="25dp"
-            android:fontFamily="@font/coolveticarg"/>
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/coolveticarg"
+            android:text="@string/QueSomos"
+            android:textSize="35dp" />
 
         <TextView
+            android:id="@+id/SubTituloEnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingresa tu correo y contraseña"
-            android:textSize="20sp"
-            android:fontFamily="@font/robotomedium"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="25dp"/>
+            android:fontFamily="@font/robotomedium"
+            android:text="@string/SubTituloDelLogin"
+            android:textSize="20sp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_layout"
@@ -75,21 +77,21 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
                 android:background="@drawable/edittext_custom"
+                android:hint="@string/ContraLogin"
+                android:inputType="textPassword"
                 android:padding="15dp"
-                android:textSize="15sp"
-                android:hint="Contraseña"
-                android:inputType="textPassword" />
+                android:textSize="15sp" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:layout_marginTop="50dp"
             android:layout_marginRight="25dp"
-            android:layout_marginLeft="25dp"
             android:background="@drawable/rounded_button"
-            android:text="Iniciar sesión" />
+            android:text="@string/InicioSesion" />
 
         <TextView
             android:id="@+id/textoBajo"

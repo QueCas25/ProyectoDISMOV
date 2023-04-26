@@ -21,13 +21,15 @@
             android:fontFamily="@font/shermandisplay"
             android:textColor="@color/red"
             android:drawableLeft="@drawable/fire_extinguisher"/>
+
         <TextView
+            android:id="@+id/TituloMenuAdmin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/coolveticarg"
-            android:text="Inicio"
+            android:text="@string/TituloAdminEnMenu"
             android:textSize="50sp" />
 
         <LinearLayout
@@ -36,15 +38,19 @@
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
             android:paddingTop="30dp">
+
             <Button
-                android:text="Servicios"
+                android:id="@+id/botonServiciosAdmin"
+                style="@style/Button"
                 android:layout_marginRight="10dp"
                 android:drawableLeft="@drawable/list_alt_24"
-                style="@style/Button"/>
+                android:text="@string/btnServicios" />
+
             <Button
-                android:text="Productos"
+                android:id="@+id/botonProductosAdmin"
+                style="@style/Button"
                 android:drawableLeft="@drawable/storefront_24"
-                style="@style/Button"/>
+                android:text="@string/BotonProductos" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,16 +60,18 @@
             android:paddingTop="10dp">
 
             <Button
-                android:text="Contacto"
+                android:id="@+id/botonContactoAdmin"
+                style="@style/Button"
                 android:layout_marginRight="10dp"
                 android:drawableLeft="@drawable/contacts_24"
 
-                style="@style/Button"/>
+                android:text="@string/btnContacto" />
 
             <Button
-                android:text="Perfil"
+                android:id="@+id/botonPerfilAdmin"
+                style="@style/Button"
                 android:drawableLeft="@drawable/person_24"
-                style="@style/Button"/>
+                android:text="@string/btnPerfil" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
@@ -71,22 +79,28 @@
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
             android:paddingTop="10dp">
+
             <Button
-                android:text="Chat"
+                android:id="@+id/botonChatAdmin"
+                style="@style/Button"
                 android:layout_marginRight="10dp"
                 android:drawableLeft="@drawable/chat_24"
-                style="@style/Button"/>
+                android:text="@string/BotonChat" />
+
             <Button
-                android:text="Videollamada"
+                android:id="@+id/botonVideollamadaAdmin"
+                style="@style/Button"
                 android:drawableLeft="@drawable/videocam_24"
-                android:textSize="13sp"
-                style="@style/Button"/>
+                android:text="@string/BotonVideoLlamada"
+                android:textSize="13sp" />
         </LinearLayout>
+
         <Button
-            android:layout_width="match_parent"
+            android:id="@+id/botonCerrarSesionAdmin"
             style="@style/MenuButton"
+            android:layout_width="match_parent"
             android:drawableLeft="@drawable/logout_24"
-            android:text="Cerrar sesión" />
+            android:text="@string/BotonRegresar" />
 
 
         <Switch

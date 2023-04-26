@@ -15,25 +15,62 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
-
 public class ActividadDelAdministrador extends AppCompatActivity {
+
     int admin;
     private Switch mLanguageSwitch;
-    private Button Regresar, VideoLlamada, Chat, Carrito, Producto;
-    private TextView Titulo;
+    private Button Servicios, Productos, Contacto, Perfil, Chat, Videollamada, CerrarSesion;
+
+    private TextView Administrador, Titulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_del_administrador);
+        Administrador  = findViewById(R.id.TituloMenuAdmin);
+        Servicios = findViewById(R.id.botonServiciosAdmin);
+        Productos = findViewById(R.id.botonProductosAdmin);
+        Contacto = findViewById(R.id.botonContactoAdmin);
+        Perfil = findViewById(R.id.botonPerfilAdmin);
+        Chat = findViewById(R.id.botonChatAdmin);
+        Videollamada = findViewById(R.id.botonVideollamadaAdmin);
+        CerrarSesion = findViewById(R.id.botonCerrarSesionAdmin);
 
+        /*Comienzan funciones al aplanar botones*/
+        Servicios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                intent.putExtra("admin", 1);
+            }
+        });
 
-        Regresar = findViewById(R.id.Volver);
-        VideoLlamada = findViewById(R.id.contact_btn3);
-        Chat = findViewById(R.id.contact_btn);
-        Producto = findViewById(R.id.contact_btn4);
-        Carrito = findViewById(R.id.contact_btn5);
+        Productos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                intent.putExtra("admin", 1);
 
-        Button Chat = findViewById(R.id.contact_btn);
+            }
+        });
+
+        Contacto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                intent.putExtra("admin", 1);
+
+            }
+        });
+
+        Perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                intent.putExtra("admin", 1);
+
+            }
+        });
+
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -43,18 +80,7 @@ public class ActividadDelAdministrador extends AppCompatActivity {
             }
         });
 
-        Button Volver = findViewById(R.id.Volver);
-        Volver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActividadDelAdministrador.this, InicioDeSesion.class);
-
-                startActivity(intent);
-            }
-        });
-
-        Button VideoCall= findViewById(R.id.contact_btn3);
-       VideoCall.setOnClickListener(new View.OnClickListener() {
+        Videollamada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ActividadDelAdministrador.this, VideoLlamada.class);
@@ -63,33 +89,49 @@ public class ActividadDelAdministrador extends AppCompatActivity {
             }
         });
 
-        mLanguageSwitch = findViewById(R.id.language_switch);
-        mLanguageSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        CerrarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
-                if (isChecked) {
-                    setLocale("en");
-                } else {
-                    setLocale("es");
-                }
+            public void onClick(View v) {
+                Intent intent = new Intent(ActividadDelAdministrador.this, InicioDeSesion.class);
+                startActivity(intent);
             }
         });
 
+        /*Terminan funciones al aplanar botones*/
+
+
+            /*Switch para Cambio de idioma */
+            mLanguageSwitch = findViewById(R.id.language_switch);
+            mLanguageSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+                    if (isChecked) {
+                        setLocale("en");
+                    } else {
+                        setLocale("es");
+                    }
+                }
+            });
+
     }
 
-    private void setLocale(String lang) {
-        Locale locale = new Locale(lang);
-        Locale.setDefault(locale);
-        Resources res = getResources();
-        Configuration config = res.getConfiguration();
-        config.locale = locale;
-        res.updateConfiguration(config, res.getDisplayMetrics());
-        Producto.setText(res.getString(R.string.BotonProductos));
-        Carrito.setText(getString(R.string.BotonCarrito));
-        VideoLlamada.setText(getString(R.string.BotonVideoLlamada));
-        Chat.setText(getString(R.string.BotonChat));
-        Regresar.setText(getString(R.string.BotonRegresar));
+            /* Funcion de Cambio de idioma */
+            private void setLocale(String lang) {
+                Locale locale = new Locale(lang);
+                Locale.setDefault(locale);
+                Resources res = getResources();
+                Configuration config = res.getConfiguration();
+                config.locale = locale;
+                res.updateConfiguration(config, res.getDisplayMetrics());
+                Administrador.setText(res.getString(R.string.TituloAdminEnMenu));
+                Servicios.setText(res.getString(R.string.btnServicios));
+                Productos.setText(res.getString(R.string.BotonProductos));
+                Contacto.setText(res.getString(R.string.btnContacto));
+                Perfil.setText(res.getString(R.string.btnPerfil));
+                Chat.setText(getString(R.string.BotonChat));
+                Videollamada.setText(getString(R.string.BotonVideoLlamada));
+                CerrarSesion.setText(getString(R.string.BotonRegresar));
 
-    }
+            }
 
 }

@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="Titulo">FireWorld Seguridad</string>
+    <string name="btnServicios">Servicios</string>
+    <string name="btnContacto">Contacto</string>
+    <string name="btnPerfil">Perfil</string>
+    <string name="TituloDeRegistro">Registro</string>
+    <string name="SubTemaDeRegistro">Completa este formulario</string>
+    <string name="QueSomos">Tienda de Extintores</string>
+    <string name="SubTituloDelLogin">Ingresa tu correo y contraseña</string>
+    <string name="TituloUsuarioEnMenu">Usuario</string>
+    <string name="TituloAdminEnMenu">Administrador</string>
 </resources>

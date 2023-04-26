@@ -32,7 +32,7 @@ import java.util.Locale;
 
 public class InicioDeSesion extends AppCompatActivity {
 
-            private TextView appname, Login, TextoBajo;
+            private TextView appname, Login, TextoBajo,  QueSomosVariable, SubtituloLogin;
             private FirebaseAuth mAuth;
             private Switch mLanguageSwitch;
             private TextInputLayout mEmailLayout;
@@ -173,8 +173,8 @@ public class InicioDeSesion extends AppCompatActivity {
                         res.updateConfiguration(config, res.getDisplayMetrics());
 
                         Login.setText(getString(R.string.Titulo));
-
-
+                        QueSomosVariable.setText(getString(R.string.QueSomos));
+                        SubtituloLogin.setText(getString(R.string.SubTituloDelLogin));
                         mEmailLayout.setHint(getString(R.string.emaillogin));
                         mPasswordLayout.setHint(getString(R.string.ContraLogin));
                         mLoginButton.setText(getString(R.string.InicioSesion));
