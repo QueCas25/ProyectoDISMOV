@@ -1,4 +1,4 @@
-package com.example.proyectodismovjava;
+package com.example.proyectodismovjava.activities;
 
 public class User {
     public String username;

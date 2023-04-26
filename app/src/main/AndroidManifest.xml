@@ -12,6 +12,15 @@
         android:theme="@style/Theme.ProyectoDISMOVJava"
         tools:targetApi="31">
         <activity
+            android:name=".ActividadDelChat"
+            android:exported="false" />
+        <activity
+            android:name=".models.ListOfChatsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".models.ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".VideoLlamada"
             android:exported="false" />
         <activity

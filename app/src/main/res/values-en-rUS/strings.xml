@@ -2,6 +2,34 @@
 <resources>
     <string name="app_name">REGISTER</string>
     <string name="InicioSesionString">DISMOV PROJECT</string>
-    <string name="emailregis">Email</string>
     <string name="emaillogin">Email</string>
+    <string name="ContraLogin">Password</string>
+    <string name="InicioSesion">Login</string>
+    <string name="AunNoTeR">If you have not registered yet, do it here!</string>
+    <string name="UsuaRe">Type your username</string>
+    <string name="CorreoReg">Type your email</string>
+    <string name="ContraRe">Type your password</string>
+    <string name="ConfRe">Confirm your password</string>
+    <string name="BotonRe">Sign Up</string>
+    <string name="IniciaRe">Already have an account? Log in here!</string>
+    <string name="TituloRe">User Sign Up</string>
+    <string name="TituloLog">Sign In</string>
+    <string name="VideoLlamadaTitulo">VideoCall</string>
+    <string name="VideoLlamadaCuerpo">Enter the call-in code assigned by an admin to enter a meeting to discuss the problem in question.</string>
+    <string name="VideoCodigo">Enter the meeting name/code</string>
+    <string name="VideoLlamadaBoton">Join</string>
+    <string name="VideoLlamadaRegresar">Back</string>
+    <string name="BotonCarrito">ADMIN</string>
+    <string name="BotonProductos">Products</string>
+    <string name="BotonVideoLlamada">VideoCall</string>
+    <string name="BotonChat">Chat</string>
+    <string name="TituloVideoLlamada">Fire World Seguridad-Admin</string>
+    <string name="BotonRegresar">Log out</string>
+    <string name="CarritoUsuario">Users</string>
+    <string name="ProductosUsuario">Products</string>
+    <string name="VideollamadaUsuario">VideoCall</string>
+    <string name="ChatUsuario">Chat</string>
+    <string name="RegresarUsuario">Log out</string>
+    <string name="TituloUsuario">Fire World Seguridad - User</string>
+    <string name="Titulo">FireWorld Seguridad</string>
 </resources>

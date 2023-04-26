@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="InicioSesionString">Proyecto DISMOV</string>
-    <string name="emailregis">Correo electrónico</string>
+    <string name="Titulo">FireWorld Seguridad</string>
 </resources>

@@ -1,6 +1,36 @@
 <resources>
-    <string name="app_name">REGISTRO</string>
-    <string name="InicioSesionString">Proyecto DISMOV</string>
-    <string name="emailregis">Correo electrónico</string>
-    <string name="emaillogin">CorreoElectronico</string>
+    <string name="app_name">Proyecto DISMOV</string>
+    <string name="InicioSesionString">Tienda de Extintores</string>
+    <string name="emaillogin">Correo electrónico</string>
+
+    <string name="ContraLogin">Contraseña</string>
+    <string name="InicioSesion">Iniciar Sesión</string>
+    <string name="AunNoTeR">¿Aun no te registras? ¡Hazlo aqui!</string>
+    <string name="UsuaRe">Escribe tu nombre de usuario</string>
+    <string name="CorreoReg">Escribe tu correo electronico</string>
+    <string name="ContraRe">Escribe tu contraseña</string>
+    <string name="ConfRe">Confirma tu contraseña</string>
+    <string name="BotonRe">Registrarse</string>
+    <string name="IniciaRe">¿Ya tienes una cuenta? ¡Inicia sesion aqui!</string>
+    <string name="TituloRe">Registro de usuario</string>
+    <string name="TituloLog">Inicio de Sesión</string>
+    <string name="VideoLlamadaTitulo">Videollamada</string>
+    <string name="VideoLlamadaCuerpo">Introduce el codigo de llamada asignado por un administrador para entrar a una reunion y tratar el problema en cuestion.</string>
+    <string name="VideoCodigo">Ingrese el nombre/codigo de la reunión</string>
+    <string name="VideoLlamadaBoton">Unirse</string>
+    <string name="VideoLlamadaRegresar">Regresar</string>
+    <string name="BotonCarrito">ADMINISTRADOR</string>
+    <string name="BotonProductos">Productos</string>
+    <string name="BotonVideoLlamada">Videollamada</string>
+    <string name="BotonChat">Chat</string>
+    <string name="TituloVideoLlamada">Fire World Seguridad-Administrador</string>
+    <string name="BotonRegresar">Cerrar Sesión</string>
+    <string name="CarritoUsuario">Usuario</string>
+    <string name="ProductosUsuario">Productos</string>
+    <string name="VideollamadaUsuario">Videollamada</string>
+    <string name="ChatUsuario">Chat</string>
+    <string name="RegresarUsuario">Cerrar Sesión</string>
+    <string name="TituloUsuario">Fire World Seguridad</string>
+    <string name="Titulo">FireWorld Seguridad</string>
+
 </resources>

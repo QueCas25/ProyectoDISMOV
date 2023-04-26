@@ -9,15 +9,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/TituloLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="60dp"
+            android:drawableLeft="@drawable/fire_extinguisher"
+            android:fontFamily="@font/shermandisplay"
+            android:text="@string/Titulo"
+            android:textColor="@color/red"
+            android:textSize="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/InicioSesionString"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="35dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/coolveticarg"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresa tu correo y contraseña"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotomedium"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="25dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_layout"
@@ -29,8 +51,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
                 android:hint="@string/emaillogin"
+                android:padding="15dp"
+                android:textSize="15dp"
+                android:background="@drawable/edittext_custom"
                 android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,7 +71,12 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:background="@drawable/edittext_custom"
+                android:padding="15dp"
+                android:textSize="15sp"
                 android:hint="Contraseña"
                 android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -52,24 +85,30 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/rounded_button"
             android:text="Iniciar sesión" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textoBajo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registro"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18sp" />
+            android:text="@string/AunNoTeR"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
 
         <Switch
             android:id="@+id/language_switch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="Español / English"/>
-
+            android:text="Español / English"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,23 +4,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@drawable/fondo"
     android:orientation="vertical"
     tools:context=".VideoLlamada">
+
+    <TextView
+        android:id="@+id/VideoTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="@string/VideoLlamadaTitulo"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/VideoInfo"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="@string/VideoLlamadaCuerpo"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/conferenceName"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_margin="12dp"
-        android:hint="Enter room name" />
+        android:hint="@string/VideoCodigo"
+        android:textColor="#070707" />
+
 
     <Button
+        android:id="@+id/ButonVideo"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_margin="12dp"
+        android:layout_marginBottom="50dp"
         android:background="#000080"
         android:onClick="onButtonClick"
-        android:text="Join"
+        android:text="@string/VideoLlamadaBoton"
         android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/ButonRegresa"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="12dp"
+        android:layout_marginBottom="50dp"
+        android:background="#000080"
+        android:onClick="onButtonClick"
+        android:text="@string/VideoLlamadaRegresar"
+        android:textColor="#FFFFFF" />
+    <Switch
+        android:id="@+id/language_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Español / English" />
 
 </LinearLayout>

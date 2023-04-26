@@ -6,4 +6,95 @@
     android:layout_height="match_parent"
     tools:context=".PantallaPrincipal">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FireWorld Seguridad"
+            android:textSize="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/shermandisplay"
+            android:textColor="@color/red"
+            android:drawableLeft="@drawable/fire_extinguisher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/coolveticarg"
+            android:text="Inicio"
+            android:textSize="50sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="30dp">
+            <Button
+                android:text="Servicios"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/list_alt_24"
+                style="@style/Button"/>
+            <Button
+                android:text="Productos"
+                android:drawableLeft="@drawable/storefront_24"
+                style="@style/Button"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
+
+            <Button
+                android:text="Contacto"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/contacts_24"
+                style="@style/Button"/>
+
+            <Button
+                android:text="Perfil"
+                android:drawableLeft="@drawable/person_24"
+                style="@style/Button"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="10dp">
+            <Button
+                android:text="Chat"
+                android:layout_marginRight="10dp"
+                android:drawableLeft="@drawable/chat_24"
+                style="@style/Button"/>
+            <Button
+                android:text="Videollamada"
+                android:drawableLeft="@drawable/videocam_24"
+                android:textSize="13sp"
+                style="@style/Button"/>
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            style="@style/MenuButton"
+            android:drawableLeft="@drawable/logout_24"
+            android:text="Cerrar sesión" />
+        <Switch
+            android:id="@+id/language_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Español / English"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

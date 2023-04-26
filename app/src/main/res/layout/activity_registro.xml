@@ -9,16 +9,26 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registro"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:layout_marginBottom="32dp"/>
+            android:textSize="60sp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/coolveticarg"
+            android:gravity="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Completa este formulario"
+            android:textSize="20sp"
+            android:fontFamily="@font/robotomedium"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -28,8 +38,14 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username_field"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1" />
+                android:layout_height="50dp"
+                android:maxLines="1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/edittext_custom"
+                android:padding="15dp"
+                android:textSize="15sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -43,7 +59,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_custom"
+                android:padding="15dp"
+                android:textSize="15sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,7 +79,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_custom"
+                android:padding="15dp"
+                android:textSize="15sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,7 +99,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_custom"
+                android:padding="15dp"
+                android:textSize="15sp"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,15 +114,28 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Registrarse"
-            android:layout_marginTop="32dp"/>
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:background="@drawable/rounded_button"/>
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textoBajo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Iniciar sesion"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="18sp" />
+            android:text="Ir a Iniciar sesión"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"/>
+
+        <Switch
+            android:id="@+id/language_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Español / English"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
 
     </LinearLayout>
 
