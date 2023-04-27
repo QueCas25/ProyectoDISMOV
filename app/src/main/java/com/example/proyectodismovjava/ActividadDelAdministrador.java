@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -56,9 +55,9 @@ public class ActividadDelAdministrador extends AppCompatActivity {
         Contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadContacto.class);
                 intent.putExtra("admin", 1);
-
+                startActivity(intent);
             }
         });
 

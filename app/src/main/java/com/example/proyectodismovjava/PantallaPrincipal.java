@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -57,9 +56,9 @@ public class PantallaPrincipal extends AppCompatActivity {
         Contacto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
-                intent.putExtra("admin", 1);
+                Intent intent = new Intent(PantallaPrincipal.this, ActividadContacto.class);
                 startActivity(intent);
+
             }
         });
 
@@ -76,7 +75,6 @@ public class PantallaPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
-                intent.putExtra("admin", 1);
                 startActivity(intent);
             }
         });
@@ -85,7 +83,7 @@ public class PantallaPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PantallaPrincipal.this, VideoLlamada.class);
-                intent.putExtra("admin", 1);
+
                 startActivity(intent);
             }
         });

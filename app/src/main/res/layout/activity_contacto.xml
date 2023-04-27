@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadContacto">
+
+    <Switch
+        android:id="@+id/language_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginStart="224dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="20dp"
+        android:text="Español / English"
+        app:layout_constraintBottom_toTopOf="@+id/subTituloEnLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactotitulo" />
+
+    <Button
+        android:id="@+id/login_button3"
+        android:layout_width="388dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_button"
+        android:text="@string/Regresar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTituloEnLogin5" />
+
+    <TextView
+        android:id="@+id/subTituloEnLogin5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="121dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="@string/Datos5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTituloEnLogin4" />
+
+    <TextView
+        android:id="@+id/subTituloEnLogin3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="83dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="@string/Datos3"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/subTituloEnLogin4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTituloEnLogin2" />
+
+    <TextView
+        android:id="@+id/subTituloEnLogin4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="68dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="@string/Datos4"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/subTituloEnLogin5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTituloEnLogin3" />
+
+    <TextView
+        android:id="@+id/contactotitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="647dp"
+        android:fontFamily="@font/coolveticarg"
+        android:text="@string/ContactoTitulo"
+        android:textSize="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/subTituloEnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="66dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="@string/Datos"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/subTituloEnLogin2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactotitulo" />
+
+    <TextView
+        android:id="@+id/subTituloEnLogin2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="117dp"
+        android:layout_marginBottom="66dp"
+        android:fontFamily="@font/robotomedium"
+        android:text="@string/Datos2"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/subTituloEnLogin3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/subTituloEnLogin" />
+</androidx.constraintlayout.widget.ConstraintLayout>

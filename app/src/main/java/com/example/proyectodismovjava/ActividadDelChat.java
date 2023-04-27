@@ -193,8 +193,10 @@ public class ActividadDelChat extends AppCompatActivity {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                    MensajeEnviar m = new MensajeEnviar("Kevin te ha enviado una foto",u.toString(),nombre.getText().toString(),fotoPerfilCadena,"2",ServerValue.TIMESTAMP);
+                    String mensaje = nombre.getText().toString() + " te ha enviado una foto";
+                    MensajeEnviar m = new MensajeEnviar(mensaje, u.toString(), nombre.getText().toString(), fotoPerfilCadena, "2", ServerValue.TIMESTAMP);
                     databaseReference.push().setValue(m);
+
                 }
             });
         }else if(requestCode == PHOTO_PERFIL && resultCode == RESULT_OK){
@@ -206,9 +208,11 @@ public class ActividadDelChat extends AppCompatActivity {
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
                     fotoPerfilCadena = u.toString();
-                    MensajeEnviar m = new MensajeEnviar("Kevin ha actualizado su foto de perfil",u.toString(),nombre.getText().toString(),fotoPerfilCadena,"2",ServerValue.TIMESTAMP);
+                    String mensaje = nombre.getText().toString() + " ha actualizado su foto de perfil";
+                    MensajeEnviar m = new MensajeEnviar(mensaje, u.toString(), nombre.getText().toString(), fotoPerfilCadena, "2", ServerValue.TIMESTAMP);
                     databaseReference.push().setValue(m);
                     Glide.with(ActividadDelChat.this).load(u.toString()).into(fotoPerfil);
+
                 }
             });
         }

@@ -50,8 +50,8 @@ public class InicioDeSesion extends AppCompatActivity {
 
                 mAuth = FirebaseAuth.getInstance();
                 Login = findViewById(R.id.TituloLogin);
-
-
+                QueSomosVariable = findViewById(R.id.QueSomos);
+                SubtituloLogin = findViewById(R.id.SubTituloEnLogin);
                 mEmailLayout = findViewById(R.id.email_layout);
                 mPasswordLayout = findViewById(R.id.password_layout);
                 mEmailField = findViewById(R.id.email_field);

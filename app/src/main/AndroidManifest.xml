@@ -12,6 +12,9 @@
         android:theme="@style/Theme.ProyectoDISMOVJava"
         tools:targetApi="31">
         <activity
+            android:name=".ActividadContacto"
+            android:exported="false" />
+        <activity
             android:name=".CrearAdmins"
             android:exported="false" />
         <activity

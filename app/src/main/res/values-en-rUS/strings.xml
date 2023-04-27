@@ -45,4 +45,12 @@
     <string name="SubTituloDelLogin">Type your email and password</string>
     <string name="TituloUsuarioEnMenu">Usuario</string>
     <string name="TituloAdminEnMenu">Administrador</string>
+    <string name="Contacto">Nuestros medios de contacto</string>
+    <string name="Datos">Luis Andres Leyva Villa</string>
+    <string name="Datos2">81 1020 1176</string>
+    <string name="Datos3">leyva_hs@outlook.com</string>
+    <string name="Datos4">Facebook: FireWorldSeguridad</string>
+    <string name="Datos5">Instagram: fwseguridad</string>
+    <string name="Regresar">Back</string>
+    <string name="ContactoTitulo">Nuestros medios de contacto</string>
 </resources>
