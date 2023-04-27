@@ -50,6 +50,7 @@ public class PantallaPrincipal extends AppCompatActivity {
                 Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
                 intent.putExtra("admin", 1);
 
+
             }
         });
 
@@ -58,7 +59,7 @@ public class PantallaPrincipal extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
                 intent.putExtra("admin", 1);
-
+                startActivity(intent);
             }
         });
 
