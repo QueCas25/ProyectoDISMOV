@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ExtintoresPQS">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FireWorld Seguridad"
+            android:textSize="50dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:fontFamily="@font/shermandisplay"
+            android:textColor="@color/red"
+            android:drawableLeft="@drawable/fire_extinguisher"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/simbolo_de_polvo"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="25dp"
+                android:layout_gravity="bottom"/>
+
+            <TextView
+                android:id="@+id/PolvoTituloTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/coolveticarg"
+                android:text="@string/PolvoTitulo"
+                android:textSize="40sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:paddingTop="15dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+                <ImageButton
+                    android:layout_width="115dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/polvo_2_5"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2.5 kg"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+                <ImageButton
+                    android:layout_width="115dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/polvo_4_5"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.5 kg"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
+                    android:layout_width="115dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/polvo_6kg"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="6 kg"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="25dp"
+            android:paddingTop="15dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+                <ImageButton
+                    android:layout_width="115dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/polvo_9kg"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9 kg"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginRight="5dp">
+                <ImageButton
+                    android:layout_width="115dp"
+                    android:layout_height="140dp"
+                    android:src="@drawable/polvo_35kg"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="35 kg"
+                    android:textSize="25sp"
+                    android:fontFamily="@font/robotomedium"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+        </LinearLayout>
+        <Button
+            android:id="@+id/PQS_BotonRegresar"
+            android:layout_width="match_parent"
+            style="@style/MenuButton"
+            android:onClick="onButtonClick"
+            android:text="@string/VideoLlamadaRegresar"
+            android:drawableLeft="@drawable/regresar_24"/>
+
+        <Switch
+            android:id="@+id/language_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Español / English"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

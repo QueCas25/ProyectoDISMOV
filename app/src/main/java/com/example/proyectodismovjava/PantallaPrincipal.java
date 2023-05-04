@@ -46,9 +46,8 @@ public class PantallaPrincipal extends AppCompatActivity {
         Productos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
-                intent.putExtra("admin", 1);
-
+                Intent intent = new Intent(PantallaPrincipal.this, Productos.class);
+                startActivity(intent);
 
             }
         });

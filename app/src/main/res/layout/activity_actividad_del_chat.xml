@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
     android:orientation="vertical"
-    android:padding="5sp"
     tools:context="com.example.proyectodismovjava.ActividadDelChat">
 
     <Button
         android:id="@+id/btnEnviar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="25dp"
+        android:drawableLeft="@drawable/regresar_24"
         android:hint="Regresar"
-        android:textColor="#FFFFFF"
         android:textColorHint="@color/white" />
 
     <LinearLayout
@@ -26,13 +26,15 @@
             android:id="@+id/fotoPerfil"
             android:layout_width="48sp"
             android:layout_height="48sp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
             android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/nombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#070707"
             android:layout_gravity="center" />
     </LinearLayout>
 
@@ -40,29 +42,34 @@
         android:id="@+id/rvMensajes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#070707"
-        android:layout_weight="1"></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/robotoregular"
+        android:textColor="#070707"></androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#070707"
         android:orientation="horizontal">
 
         <EditText
             android:id="@+id/txtMensaje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
             android:layout_weight="1"
-            android:textColor="#070707"
+            android:fontFamily="@font/robotoregular"
             android:hint="Escribe un mensaje" />
 
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="20dp"
             android:hint="Enviar"
-            android:textColor="#FFFFFF"
             android:textColorHint="@color/white" />
     </LinearLayout>
 </LinearLayout>

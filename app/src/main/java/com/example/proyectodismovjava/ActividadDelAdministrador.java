@@ -40,15 +40,16 @@ public class ActividadDelAdministrador extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
                 intent.putExtra("admin", 1);
+
             }
         });
 
         Productos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                Intent intent = new Intent(ActividadDelAdministrador.this, Productos.class);
                 intent.putExtra("admin", 1);
-
+                startActivity(intent);
             }
         });
 

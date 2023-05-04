@@ -18,4 +18,11 @@
     <string name="Datos5">Instagram: fwseguridad</string>
     <string name="Regresar">Regresar</string>
     <string name="ContactoTitulo">Nuestros medios de contacto</string>
+    <string name="TituloProductos">Productos</string>
+    <string name="PolvoSecoBtn">Extintor Polvo Químico Seco</string>
+    <string name="DioxidoDeCarbonoBtn">Extintor Dióxido de Carbono</string>
+    <string name="AcetatoBtn">Extintor Acetato de Potasio</string>
+    <string name="AcetatoTitulo">Extintor Acetato de Potasio</string>
+    <string name="DioxidoTitulo">Extintor Dióxido de Carbono</string>
+    <string name="PolvoTitulo">Extintor Polvo Químico Seco</string>
 </resources>

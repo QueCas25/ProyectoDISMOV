@@ -3,59 +3,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@drawable/fondo"
     android:orientation="vertical"
     tools:context=".VideoLlamada">
 
     <TextView
         android:id="@+id/VideoTitulo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:gravity="center"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/coolveticarg"
         android:text="@string/VideoLlamadaTitulo"
-        android:textSize="24sp" />
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/VideoInfo"
         android:layout_width="match_parent"
-        android:layout_height="102dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginBottom="5dp"
-        android:gravity="center"
+        android:fontFamily="@font/robotomedium"
         android:text="@string/VideoLlamadaCuerpo"
-        android:textSize="24sp" />
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/conferenceName"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:layout_margin="12dp"
-        android:hint="@string/VideoCodigo"
-        android:textColor="#070707" />
-
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="25dp"
+        android:fontFamily="@font/robotoregular"
+        android:hint="@string/VideoCodigo" />
 
     <Button
         android:id="@+id/ButonVideo"
+        style="@style/MenuButton"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_margin="12dp"
-        android:layout_marginBottom="50dp"
-        android:background="#000080"
+        android:drawableLeft="@drawable/group_24"
         android:onClick="onButtonClick"
-        android:text="@string/VideoLlamadaBoton"
-        android:textColor="#FFFFFF" />
+        android:text="@string/VideoLlamadaBoton" />
 
     <Button
         android:id="@+id/ButonRegresa"
+        style="@style/MenuButton"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_margin="12dp"
-        android:layout_marginBottom="50dp"
-        android:background="#000080"
+        android:drawableLeft="@drawable/regresar_24"
         android:onClick="onButtonClick"
-        android:text="@string/VideoLlamadaRegresar"
-        android:textColor="#FFFFFF" />
+        android:text="@string/VideoLlamadaRegresar" />
+
     <Switch
         android:id="@+id/language_switch"
         android:layout_width="wrap_content"

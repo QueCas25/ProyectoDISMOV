@@ -15,6 +15,18 @@
             android:name=".ActividadContacto"
             android:exported="false" />
         <activity
+            android:name=".Productos"
+            android:exported="false" />
+        <activity
+            android:name=".ExtintoresCO2"
+            android:exported="false" />
+        <activity
+        android:name=".ExtintoresADP"
+        android:exported="false" />
+        <activity
+            android:name=".ExtintoresPQS"
+            android:exported="false" />
+        <activity
             android:name=".CrearAdmins"
             android:exported="false" />
         <activity
