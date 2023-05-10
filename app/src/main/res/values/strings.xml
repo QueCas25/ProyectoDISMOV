@@ -83,6 +83,9 @@
     <string name="AcetatoTitulo">Extintor Acetato de Potasio</string>
     <string name="DioxidoTitulo">Extintor Dióxido de Carbono</string>
     <string name="PolvoTitulo">Extintor Polvo Químico Seco</string>
+    <string name="btnSend">Enviar</string>
+    <string name="placeholderMsg">mensaje</string>
+    <string name="FinishCall">Llamada finalizada</string>
 
 
 </resources>

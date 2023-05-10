@@ -60,4 +60,7 @@
     <string name="AcetatoTitulo">Potassium Acetate Extinguisher</string>
     <string name="DioxidoTitulo">Carbon Dioxide Extinguisher</string>
     <string name="PolvoTitulo">Dry chemical powder extinguishe</string>
+    <string name="btnSend">Enviar</string>
+    <string name="placeholderMsg">mensaje</string>
+    <string name="FinishCall">Llamada finalizada</string>
 </resources>

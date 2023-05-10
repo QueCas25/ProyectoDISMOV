@@ -73,7 +73,7 @@ public class PantallaPrincipal extends AppCompatActivity {
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PantallaPrincipal.this, ActividadDelChat.class);
+                Intent intent = new Intent(PantallaPrincipal.this, UsersActivity.class);
                 startActivity(intent);
             }
         });

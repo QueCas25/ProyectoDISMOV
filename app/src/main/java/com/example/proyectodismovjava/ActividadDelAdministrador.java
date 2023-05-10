@@ -11,20 +11,30 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
-
+import com.example.proyectodismovjava.models.User;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import java.util.Locale;
 
 public class ActividadDelAdministrador extends AppCompatActivity {
-
+    FirebaseAuth auth;
     int admin;
+    private FirebaseDatabase database;
+    private DatabaseReference databaseReference;
     private Switch mLanguageSwitch;
     private Button Servicios, Productos, Contacto, Perfil, Chat, Videollamada, CerrarSesion;
-
+    String username;
     private TextView Administrador, Titulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_actividad_del_administrador);
+        auth = FirebaseAuth.getInstance();
         Administrador  = findViewById(R.id.TituloMenuAdmin);
         Servicios = findViewById(R.id.botonServiciosAdmin);
         Productos = findViewById(R.id.botonProductosAdmin);
@@ -33,12 +43,14 @@ public class ActividadDelAdministrador extends AppCompatActivity {
         Chat = findViewById(R.id.botonChatAdmin);
         Videollamada = findViewById(R.id.botonVideollamadaAdmin);
         CerrarSesion = findViewById(R.id.botonCerrarSesionAdmin);
-
+        database = FirebaseDatabase.getInstance();
+        databaseReference = database.getReference("users");
+        username = auth.getCurrentUser().getEmail().toString().split("@")[0];
         /*Comienzan funciones al aplanar botones*/
         Servicios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                Intent intent = new Intent(ActividadDelAdministrador.this, UsersActivity.class);
                 intent.putExtra("admin", 1);
 
             }
@@ -74,7 +86,7 @@ public class ActividadDelAdministrador extends AppCompatActivity {
         Chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ActividadDelAdministrador.this, ActividadDelChat.class);
+                Intent intent = new Intent(ActividadDelAdministrador.this, UsersActivity.class);
                 intent.putExtra("admin", 1);
                 startActivity(intent);
             }

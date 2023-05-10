@@ -1,63 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".VideoLlamada">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/VideoTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/coolveticarg"
-        android:text="@string/VideoLlamadaTitulo"
-        android:textSize="50sp" />
 
-    <TextView
-        android:id="@+id/VideoInfo"
+    <RelativeLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#4CAF50"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/returnToUserBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/baseline_arrow_back_ios_24" />
+
+                <TextView
+                    android:id="@+id/UserNameTittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="Adrian Robledo"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/CallUserBtn"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center|center_horizontal"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/baseline_call_24" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listChat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/chatinput"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:hint="@string/placeholderMsg"
+                        android:inputType="textLongMessage" />
+
+                    <Button
+                        android:id="@+id/chatsend"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:text="@string/btnSend" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/callLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/robotomedium"
-        android:text="@string/VideoLlamadaCuerpo"
-        android:textSize="20sp" />
+        android:background="@color/teal_200"
+        android:visibility="gone">
 
-    <EditText
-        android:id="@+id/conferenceName"
+        <TextView
+            android:id="@+id/incomingCallTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Someone is calling..." />
+
+        <ImageView
+            android:id="@+id/acceptBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/rejectBtn"
+            android:padding="20dp"
+            android:src="@drawable/baseline_call_24" />
+
+        <ImageView
+            android:id="@+id/rejectBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:padding="20dp"
+            android:src="@drawable/baseline_call_end_24" />
+
+    </RelativeLayout>
+
+    <WebView
+        android:id="@+id/webView"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
-        android:fontFamily="@font/robotoregular"
-        android:hint="@string/VideoCodigo" />
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
-    <Button
-        android:id="@+id/ButonVideo"
-        style="@style/MenuButton"
+    <LinearLayout
+        android:id="@+id/callControlLayout"
         android:layout_width="match_parent"
-        android:drawableLeft="@drawable/group_24"
-        android:onClick="onButtonClick"
-        android:text="@string/VideoLlamadaBoton" />
-
-    <Button
-        android:id="@+id/ButonRegresa"
-        style="@style/MenuButton"
-        android:layout_width="match_parent"
-        android:drawableLeft="@drawable/regresar_24"
-        android:onClick="onButtonClick"
-        android:text="@string/VideoLlamadaRegresar" />
-
-    <Switch
-        android:id="@+id/language_switch"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="end"
-        android:text="Español / English" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="64dp"
+        android:gravity="center"
+        android:visibility="gone">
 
-</LinearLayout>
+        <ImageView
+            android:id="@+id/toggleVideoBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="#99000000"
+            android:padding="4dp"
+            android:src="@drawable/videocam" />
+
+        <ImageView
+            android:id="@+id/toggleAudioBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="36dp"
+            android:background="#99000000"
+            android:padding="4dp"
+            android:src="@drawable/mic" />
+
+        <ImageView
+            android:id="@+id/callOutBtn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="36dp"
+            android:background="#E91E63"
+            android:padding="4dp"
+            android:src="@drawable/baseline_call_end_24" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

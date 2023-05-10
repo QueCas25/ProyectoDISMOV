@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-
+import com.google.firebase.database.FirebaseDatabase;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.view.View;
@@ -113,7 +113,7 @@ public class Registro extends AppCompatActivity {
                                     Map<String, Object> userMap = new HashMap<>();
                                     userMap.put("name", username);
                                     userMap.put("email", email);
-
+                                    mDatabase.child("users").child(user.getUid()).setValue(userMap);
                                     db.collection("users")
                                             .document(user.getUid())
                                             .set(userMap)

@@ -12,7 +12,13 @@
         android:theme="@style/Theme.ProyectoDISMOVJava"
         tools:targetApi="31">
         <activity
+            android:name=".AdminInicioDeSesion"
+            android:exported="false" />
+        <activity
             android:name=".ActividadContacto"
+            android:exported="false" />
+        <activity
+            android:name=".UsersActivity"
             android:exported="false" />
         <activity
             android:name=".Productos"
@@ -21,8 +27,8 @@
             android:name=".ExtintoresCO2"
             android:exported="false" />
         <activity
-        android:name=".ExtintoresADP"
-        android:exported="false" />
+            android:name=".ExtintoresADP"
+            android:exported="false" />
         <activity
             android:name=".ExtintoresPQS"
             android:exported="false" />

@@ -1,142 +1,86 @@
 package com.example.proyectodismovjava;
 
-import static android.content.ContentValues.TAG;
-
-import android.content.Intent;
-import android.net.Uri;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.example.proyectodismovjava.adapters.AdapterMensajes;
-import com.example.proyectodismovjava.adapters.MensajeEnviar;
-import com.example.proyectodismovjava.adapters.MensajeRecibir;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.example.proyectodismovjava.Chat.Adapter;
+import com.example.proyectodismovjava.models.Message;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+import java.util.Date;
 
 public class ActividadDelChat extends AppCompatActivity {
 
-    private CircleImageView fotoPerfil;
-    private TextView nombre;
-    private RecyclerView rvMensajes;
-    private EditText txtMensaje;
-    private Button btnEnviar, btnRegresar;
-    private AdapterMensajes adapter;
-    private ImageButton btnEnviarFoto;
-
+    private Button BtnSend, BtnVideo;
+    private EditText TxtMsg;
+    private RecyclerView ListMsg;
+    private Adapter adapter;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private FirebaseStorage storage;
-    private StorageReference storageReference;
-    private static final int PHOTO_SEND = 1;
-    private static final int PHOTO_PERFIL = 2;
-    private String fotoPerfilCadena;
-    int sies = 1;
+    private FirebaseAuth auth;
+    private static final int REQUEST_PERMISSION = 200;
+    private String[] permissions = {android.Manifest.permission.CAMERA,
+            android.Manifest.permission.RECORD_AUDIO};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actividad_del_chat);
-        int adminVariable = getIntent().getIntExtra("admin", 0);
-        fotoPerfil = (CircleImageView) findViewById(R.id.fotoPerfil);
-        nombre = (TextView) findViewById(R.id.nombre);
-        rvMensajes = (RecyclerView) findViewById(R.id.rvMensajes);
-        txtMensaje = (EditText) findViewById(R.id.txtMensaje);
-        btnEnviar = (Button) findViewById(R.id.btnEnviar);
-        btnRegresar = (Button) findViewById(R.id.btnEnviar2);
-        fotoPerfilCadena = "";
 
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-        if (currentUser != null) {
-            String userId = currentUser.getUid();
+        ListMsg = (RecyclerView) findViewById(R.id.listChat);
+        TxtMsg = (EditText) findViewById(R.id.chatinput);
+        BtnSend = (Button) findViewById(R.id.chatsend);
+        BtnVideo = (Button) findViewById(R.id.videocall);
 
-            db.collection("users").document(userId)
-                    .get()
-                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            if (documentSnapshot.exists()) {
-                                String nombreUsuario = documentSnapshot.getString("name");
-                                TextView textViewNombre = findViewById(R.id.nombre);
-                                textViewNombre.setText(nombreUsuario);
-                            }
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.d(TAG, "Error al obtener el nombre de usuario: ", e);
-                        }
-                    });
-        }
+        auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
-        databaseReference = database.getReference("chat");//Sala de chat (nombre)
-        storage = FirebaseStorage.getInstance();
+        databaseReference = database.getReference("chats");
 
-        adapter = new AdapterMensajes(this);
+        adapter = new Adapter(this);
         LinearLayoutManager l = new LinearLayoutManager(this);
-        rvMensajes.setLayoutManager(l);
-        rvMensajes.setAdapter(adapter);
+        ListMsg.setLayoutManager(l);
+        ListMsg.setAdapter(adapter);
 
-        btnEnviar.setOnClickListener(new View.OnClickListener() {
+        for (String s : permissions){
+            checkPermissions(s);
+        }
+
+        BtnSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseReference.push().setValue(new MensajeEnviar(txtMensaje.getText().toString(),nombre.getText().toString(),fotoPerfilCadena,"1", ServerValue.TIMESTAMP));
-                txtMensaje.setText("");
+                Date hour = new Date();
+                String user = auth.getCurrentUser() == null ? "Offline" :
+                        auth.getCurrentUser().getEmail().toString().split("@")[0];
+                //databaseReference.push().setValue(new Message(TxtMsg.getText().toString(),
+                //      user, ServerValue.TIMESTAMP.toString()));
+                TxtMsg.setText("");
             }
         });
 
-        btnRegresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (adminVariable == sies) {
-                    // El correo electronic pertenece a un administrador, abre la actividad de administrador
-                    Intent intent = new Intent(ActividadDelChat.this, ActividadDelAdministrador.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    // El correo electrónico no pertenece a un administrador, regresa a la actividad normal
-                    Intent intent = new Intent(ActividadDelChat.this, PantallaPrincipal.class);
-                    startActivity(intent);
-                    finish();
-                }
-            }
-        });
-
-
-        fotoPerfil.setOnClickListener(new View.OnClickListener() {
+        BtnVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_GET_CONTENT);
-                i.setType("image/jpeg");
-                i.putExtra(Intent.EXTRA_LOCAL_ONLY,true);
-                startActivityForResult(Intent.createChooser(i,"Selecciona una foto"),PHOTO_PERFIL);
+                Intent intent = new Intent(ActividadDelChat.this,
+                        VideoLlamada.class);
+                intent.putExtra("username", auth.getCurrentUser().getEmail().split("@")[0]);
+                startActivity(intent);
             }
         });
 
@@ -148,11 +92,11 @@ public class ActividadDelChat extends AppCompatActivity {
             }
         });
 
+
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                MensajeRecibir m = dataSnapshot.getValue(MensajeRecibir.class);
-                adapter.addMensaje(m);
+                Message m = dataSnapshot.getValue(Message.class);
             }
 
             @Override
@@ -178,43 +122,16 @@ public class ActividadDelChat extends AppCompatActivity {
 
     }
 
-    private void setScrollbar(){
-        rvMensajes.scrollToPosition(adapter.getItemCount()-1);
+    private boolean checkPermissions(String permission) {
+        int result = ContextCompat.checkSelfPermission(this, permission);
+        if (result != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this, new String[]{permission}, REQUEST_PERMISSION);
+        }
+
+        return result == PackageManager.PERMISSION_GRANTED;
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == PHOTO_SEND && resultCode == RESULT_OK){
-            Uri u = data.getData();
-            storageReference = storage.getReference("imagenes_chat");//imagenes_chat
-            final StorageReference fotoReferencia = storageReference.child(u.getLastPathSegment());
-            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                    String mensaje = nombre.getText().toString() + " te ha enviado una foto";
-                    MensajeEnviar m = new MensajeEnviar(mensaje, u.toString(), nombre.getText().toString(), fotoPerfilCadena, "2", ServerValue.TIMESTAMP);
-                    databaseReference.push().setValue(m);
-
-                }
-            });
-        }else if(requestCode == PHOTO_PERFIL && resultCode == RESULT_OK){
-            Uri u = data.getData();
-            storageReference = storage.getReference("foto_perfil");//imagenes_chat
-            final StorageReference fotoReferencia = storageReference.child(u.getLastPathSegment());
-            fotoReferencia.putFile(u).addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                    fotoPerfilCadena = u.toString();
-                    String mensaje = nombre.getText().toString() + " ha actualizado su foto de perfil";
-                    MensajeEnviar m = new MensajeEnviar(mensaje, u.toString(), nombre.getText().toString(), fotoPerfilCadena, "2", ServerValue.TIMESTAMP);
-                    databaseReference.push().setValue(m);
-                    Glide.with(ActividadDelChat.this).load(u.toString()).into(fotoPerfil);
-
-                }
-            });
-        }
+    private void setScrollbar(){
+        ListMsg.scrollToPosition(adapter.getItemCount()-1);
     }
 }

@@ -100,10 +100,12 @@ public class InicioDeSesion extends AppCompatActivity {
                                                                 if (documentSnapshot.exists()) {
                                                                     // El correo electrónico pertenece a un administrador, abre la actividad de administrador
                                                                     Intent intent = new Intent(InicioDeSesion.this, ActividadDelAdministrador.class);
+                                                                    intent.putExtra("user", user.getEmail());
                                                                     startActivity(intent);
                                                                     finish();
                                                                 } else {
                                                                     Intent intent = new Intent(InicioDeSesion.this, PantallaPrincipal.class);
+                                                                    intent.putExtra("user", user.getEmail());
                                                                     startActivity(intent);
                                                                     finish();
                                                                 }
@@ -146,7 +148,7 @@ public class InicioDeSesion extends AppCompatActivity {
                 TextoBajo.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(getApplicationContext(), Registro.class);
+                        Intent intent = new Intent(getApplicationContext(), AdminInicioDeSesion.class);
                         startActivity(intent);
                     }
                 });
